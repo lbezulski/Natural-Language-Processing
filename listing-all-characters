@@ -1,0 +1,16 @@
+# listing all characters in texts from one column in pandas df
+
+def characters_list(df, col):
+    out_list = []
+    for row in range(0, df.shape[0]):
+        text = df.loc[row, col]
+       
+        for i in text:
+            if i not in out_list:
+                out_list += i
+    return out_list
+
+unq_list = characters_list(sample_df, 'sample_column')
+
+print(unq_list)
+len(unq_list)
