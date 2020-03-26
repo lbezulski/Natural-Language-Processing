@@ -1,0 +1,13 @@
+# based on Python package sklearn
+# column containing texts for using bag of words is located in pandas dataframe 'df' and column name 'col'
+
+from sklearn.feature_extraction.text import CountVectorizer
+
+vectorizer = CountVectorizer()
+X = vectorizer.fit_transform(df['col'])
+
+# getting features names
+name = vectorizer.get_feature_names()
+
+# getting dict mapping columns
+col_dict = vectorizer.vocabulary_
